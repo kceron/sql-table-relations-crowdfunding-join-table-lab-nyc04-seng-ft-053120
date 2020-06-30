@@ -9,7 +9,8 @@
 #SELECT aisle, SUM(quantity) FROM groceries GROUP BY aisle ORDER BY SUM(quantity);
 
 def selects_the_titles_of_all_projects_and_their_pledge_amounts_alphabetized_by_title
-  "SELECT title FROM projects INNER JOIN pledges ON projects.id = pledges.id GROUP BY pledges.amount ORDER BY projects.title;"
+  "SELECT title FROM projects, INNER JOIN pledges ON projects.id = pledges.id, ORDER BY pledges.amount DESC, ORDER BY projects.title;"
+  #ORDER BY column_name DESC, column_name ASC|DESC;
 end
 
 def selects_the_user_name_age_and_pledge_amount_for_all_pledges_alphabetized_by_name
